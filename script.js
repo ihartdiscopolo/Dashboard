@@ -48,7 +48,6 @@ function renderCards(data) {
 
     card.innerHTML = `
       <p class="url">${item.url}</p>
-      <p class="status">${item.status}</p>
     `;
 
     container.appendChild(card);
@@ -62,9 +61,9 @@ function renderProgressBars(serverData) {
   const memUsed  = parseInt(serverData.server.get.result.stat.mem.used, 10);
   const memPercent = (memUsed / memTotal) * 100;
 
-  if (memPercent => 80 && memPercent < 90) {
+  if (memPercent >= 80 && memPercent < 90) {
     memClass = "orange";
-  } else if (memPercent => 90) {
+  } else if (memPercent >= 90) {
     memClass = "red";
   } else {
     memClass = "green";
@@ -74,9 +73,9 @@ function renderProgressBars(serverData) {
   const diskUsed  = parseInt(serverData.server.get.result.stat.diskspace.device.used, 10);
   const diskPercent = (diskUsed / diskTotal) * 100;
 
-  if (diskPercent => 80 && diskPercent < 90) {
+  if (diskPercent >= 80 && diskPercent < 90) {
     diskClass = "orange";
-  } else if (diskPercent => 90) {
+  } else if (diskPercent >= 90) {
     diskClass = "red";
   } else {
     diskClass = "green";
@@ -85,12 +84,12 @@ function renderProgressBars(serverData) {
   const bar = document.querySelector("footer");
   bar.innerHTML = ""
   bar.innerHTML = `
-  <div class="${memClass}">
+  <div class="memoryBar ${memClass}">
     <p>Memory:</p>
     <progress max="${memTotal}" value="${memUsed}"></progress>
     <p>${memPercent.toFixed(2)}%</p>
   </div>
-  <div class="${diskClass}">
+  <div class="diskBar ${diskClass}">
     <p>Disk:</p>
     <progress max="${diskTotal}" value="${diskUsed}"></progress>
     <p>${diskPercent.toFixed(2)}%</p>
