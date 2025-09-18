@@ -1,10 +1,20 @@
- let allData = []; 
+  let allData = [];
+  let serverData = [];
 
 fetch("status.json")
   .then(response => response.json())
   .then(data => {
     allData = data; 
     renderCards(allData);
+  })
+  .catch(error => console.error("Error loading JSON:", error));
+
+  fetch("stats.json")
+  .then(response => response.json())
+  .then(data => {
+    serverData = data;
+      console.log(serverData);
+      renderProgressBars(serverData);
   })
   .catch(error => console.error("Error loading JSON:", error));
 
@@ -45,6 +55,31 @@ function renderCards(data) {
 
     const urlBox = card.querySelector(".url");
   });
+}
+
+function renderProgressBars(serverData) {
+  const memTotal = parseInt(serverData.server.get.result.stat.mem.total, 10);
+  const memUsed  = parseInt(serverData.server.get.result.stat.mem.used, 10);
+  const memPercent = (memUsed / memTotal) * 100;
+
+  const diskTotal = parseInt(serverData.server.get.result.stat.diskspace.device.total, 10);
+  const diskUsed  = parseInt(serverData.server.get.result.stat.diskspace.device.used, 10);
+  const diskPercent = (diskUsed / diskTotal) * 100;
+
+  const bar = document.querySelector("footer");
+  bar.innerHTML = ""
+  bar.innerHTML = `
+  <div class="memoryBar">
+    <p>Memory:</p>
+    <progress max="${memTotal}" value="${memUsed}"></progress>
+    <p>${memPercent.toFixed(2)}%</p>
+  </div>
+  <div class="diskBar">
+    <p>Disk:</p>
+    <progress max="${diskTotal}" value="${diskUsed}"></progress>
+    <p>${diskPercent.toFixed(2)}%</p>
+  </div>
+  `
 }
 
 document.addEventListener("DOMContentLoaded", () => {
