@@ -62,19 +62,35 @@ function renderProgressBars(serverData) {
   const memUsed  = parseInt(serverData.server.get.result.stat.mem.used, 10);
   const memPercent = (memUsed / memTotal) * 100;
 
+  if (memPercent => 80 && memPercent < 90) {
+    memClass = "orange";
+  } else if (memPercent => 90) {
+    memClass = "red";
+  } else {
+    memClass = "green";
+  }
+
   const diskTotal = parseInt(serverData.server.get.result.stat.diskspace.device.total, 10);
   const diskUsed  = parseInt(serverData.server.get.result.stat.diskspace.device.used, 10);
   const diskPercent = (diskUsed / diskTotal) * 100;
 
+  if (diskPercent => 80 && diskPercent < 90) {
+    diskClass = "orange";
+  } else if (diskPercent => 90) {
+    diskClass = "red";
+  } else {
+    diskClass = "green";
+  }
+
   const bar = document.querySelector("footer");
   bar.innerHTML = ""
   bar.innerHTML = `
-  <div class="memoryBar">
+  <div class="${memClass}">
     <p>Memory:</p>
     <progress max="${memTotal}" value="${memUsed}"></progress>
     <p>${memPercent.toFixed(2)}%</p>
   </div>
-  <div class="diskBar">
+  <div class="${diskClass}">
     <p>Disk:</p>
     <progress max="${diskTotal}" value="${diskUsed}"></progress>
     <p>${diskPercent.toFixed(2)}%</p>
