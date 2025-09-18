@@ -1,0 +1,67 @@
+{
+"@attributes": {
+"version": "1.6.9.1"
+},
+"server": {
+"get": {
+"result": {
+"status": "ok",
+"stat": {
+"objects": {
+"clients": "1",
+"domains": "42",
+"active_domains": "42",
+"mail_boxes": "0",
+"mail_redirects": "0",
+"mail_groups": "0",
+"mail_responders": "0",
+"web_users": "0",
+"databases": "33",
+"database_users": "33",
+"problem_clients": "0",
+"problem_domains": "0"
+},
+"version": {
+"plesk_name": "psa",
+"plesk_version": "18.0.72",
+"plesk_os": "Ubuntu",
+"plesk_os_version": "22.04",
+"plesk_build": "1800250915.05",
+"os_release": "5.15.0-153-generic"
+},
+"other": {
+"cpu": "AMD EPYC Processor (with IBPB) (8 core(s))",
+"uptime": "74520",
+"inside_vz": "false"
+},
+"load_avg": {
+"l1": "9",
+"l5": "26",
+"l15": "33"
+},
+"mem": {
+"total": "16728834048",
+"used": "1672589312",
+"free": "490569728",
+"shared": "409227264",
+"buffer": "1025245184",
+"cached": "13540429824"
+},
+"swap": {
+"total": "0",
+"used": "0",
+"free": "0"
+},
+"diskspace": {
+"device": {
+"name": "\/dev\/vda1",
+"total": "623948414976",
+"used": "581165522944",
+"free": "42766114816"
+}
+}
+}
+}
+}
+}
+}
