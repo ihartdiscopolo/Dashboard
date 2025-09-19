@@ -163,6 +163,7 @@ progress {
 }
 .green progress::-webkit-progress-bar {
   border-radius: 6px;
+  background: #bbbbbb;
 }
 
 .orange progress::-webkit-progress-value {
@@ -171,6 +172,7 @@ progress {
 }
 .orange progress::-webkit-progress-bar {
   border-radius: 6px;
+  background: #bbbbbb;
 }
 
 .red progress::-webkit-progress-value {
@@ -179,6 +181,7 @@ progress {
 }
 .red progress::-webkit-progress-bar {
   border-radius: 6px;
+  background: #bbbbbb;
 }
 
 .green progress::-moz-progress-bar {
