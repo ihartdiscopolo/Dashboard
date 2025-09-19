@@ -23,6 +23,29 @@
   --font-family: Arial, sans-serif;
 }
 
+.dark-mode {
+  --black-shadow: #ffffff1a;
+  --dark-grey: #e6e6e6;
+  --dark-grey-trans: #e6e6e628;
+  --dark-grey-trans2: #e6e6e6a9;
+  --light-grey: #1c1c1c;
+  --white: #121212;
+
+  --blue: #3a4f72;
+  --blue-shadow: #5b7296b8;
+  --green: #2e4737;
+  --green-shadow: #4a6d52ad;
+
+  --yellow: #7a6d2b;
+  --yellow-shadow: #d8c97acc;
+
+  --red: #6a2d32;
+  --red-shadow: #a3454fd0;
+
+  --purple: #4c3561;
+  --purple-shadow: #7d5c95b0;
+}
+
 html {
   overflow-y: scroll;
 }
@@ -36,22 +59,20 @@ body {
   height: 100vh;
 }
 
+
 .Qteco {
   background: var(--white);
-  flex-wrap: wrap;
   display: flex;
+  justify-content: space-between; 
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0.5%;
+  padding: 0.5% 2%;
   margin-bottom: 0.9%;
   box-shadow: 0 0.5vw 0.5vw var(--dark-grey-trans);
 }
 
 .Qteco img {
-  max-width: 14%;
+  max-width: 50%;
   height: auto;
-  display: block;
 }
 
 #card-container {
@@ -121,16 +142,21 @@ a {
 #filter {
   font-size: 1.2vw;
   font-weight: bold;
-  position: absolute;
-  left: 2%;
   display: flex;
+  align-items: center;
   gap: 1vh;
 }
 
 #status-filter {
   font-size: 1vw;
   border-radius: 6px;
-  border: 1px solid var(--white);
+}
+
+#theme-select {
+  border-radius: 6px;
+  border-color: var(--dark-grey);
+  background-color: #00000000;
+  color: var(--dark-grey);
 }
 
 footer {

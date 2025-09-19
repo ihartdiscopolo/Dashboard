@@ -154,4 +154,21 @@ filter.addEventListener("change", () => {
     renderCards(filtered);
   }
 });
+const themeSelect = document.getElementById("theme-select");
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  themeSelect.value = "dark";
+}
+
+themeSelect.addEventListener("change", (e) => {
+  if (e.target.value === "dark") {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("theme", "light");
+  }
 });
+});
+ 
