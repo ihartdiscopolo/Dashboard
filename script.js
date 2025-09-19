@@ -133,7 +133,19 @@ function renderProgressBars(serverData) {
   const barDown = document.querySelector(".footDown");
   barDown.innerHTML = ""
   barDown.innerHTML = `
-  
+  <div class="memoryInfo">
+    <p>Memory</p>
+    <p>Total: ${(memTotal / (1024 * 1024 * 1024)).toFixed(2)}Gb</p>
+    <p>Cached: ${(memCached / (1024 * 1024 * 1024)).toFixed(2)}Gb</p>
+    <p>Free: ${memory}</p>
+    <p>Available: ${memAvailable.toFixed(2)}Gb</p>
+  </div>
+  <div class="diskInfo">
+    <p>Diskspace</p>
+    <p>Total: ${(diskTotal / (1024 * 1024 * 1024)).toFixed(2)}Gb</p>
+    <p>Free: ${diskspace}</p>
+    <p>Available: ${diskAvailable.toFixed(2)}Gb</p>
+  </div>
   `
 }
 
