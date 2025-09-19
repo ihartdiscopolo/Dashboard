@@ -12,7 +12,7 @@ fetch("status.json")
   fetch("stats.json")
   .then(response => response.json())
   .then(data => {
-    serverData = data;
+    serverData = data.server.get.result.stat;
       console.log(serverData);
       renderProgressBars(serverData);
   })
@@ -57,12 +57,12 @@ function renderCards(data) {
 }
 
 function renderProgressBars(serverData) {
-  const memTotal = parseInt(serverData.server.get.result.stat.mem.total, 10);
-  const memUsed  = parseInt(serverData.server.get.result.stat.mem.used, 10);
+  const memTotal = parseInt(serverData.mem.total, 10);
+  const memUsed  = parseInt(serverData.mem.used, 10);
   const memPercent = (memUsed / memTotal) * 100;
-  const memFree = parseInt(serverData.server.get.result.stat.mem.free, 10);
-  const memShared = parseInt(serverData.server.get.result.stat.mem.shared, 10);
-  const memCached = parseInt(serverData.server.get.result.stat.mem.cached, 10);
+  const memFree = parseInt(serverData.mem.free, 10);
+  const memShared = parseInt(serverData.mem.shared, 10);
+  const memCached = parseInt(serverData.mem.cached, 10);
 
   memAvailable = (memFree + memShared + memCached) / (1024 * 1024 * 1024);
 
@@ -87,10 +87,10 @@ function renderProgressBars(serverData) {
     memClass = "green";
   }
 
-  const diskTotal = parseInt(serverData.server.get.result.stat.diskspace.device.total, 10);
-  const diskUsed  = parseInt(serverData.server.get.result.stat.diskspace.device.used, 10);
+  const diskTotal = parseInt(serverData.diskspace.device.total, 10);
+  const diskUsed  = parseInt(serverData.diskspace.device.used, 10);
   const diskPercent = (diskUsed / diskTotal) * 100;
-  const diskFree = parseInt(serverData.server.get.result.stat.diskspace.device.free);
+  const diskFree = parseInt(serverData.diskspace.device.free);
 
   diskAvailable = (diskTotal - diskUsed) / (1024 * 1024 * 1024);
 
