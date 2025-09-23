@@ -5,15 +5,18 @@
   --dark-grey-trans: #33333328;
   --dark-grey-trans2: #333333a9;
   --light-grey: #ebebeb;
-  --white: #ffffff;
 
   --blue: #d8e5ff;
   --blue-shadow: #8b9bbcb8;
+
+  --green-screen:  #008000;
   --green: #d4edda;
   --green-shadow: #80a98aad;
 
   --yellow: #fff3cd;
   --yellow-shadow: #bca352cc;
+
+  --orange: #ffa500;
 
   --red: #f8d7da;
   --red2: #ff0000;
@@ -22,9 +25,11 @@
   --purple: #e3c6f5;
   --purple-shadow: #996db5b0;
 
+  --white: #ffffff;
   --white-op: #2c2c2cb4;
   --white-very-op: #5c5c5c26;
   --white-trans: #525252b9;
+  --white-trans2: #bbbbbb;
   --white-shadow: #959595;
 
   --transparent: #00000000;
@@ -42,6 +47,7 @@
 
   --blue: #3a4f72;
   --blue-shadow: #33435fb8;
+
   --green: #2e4737;
   --green-shadow: #2a432fad;
 
@@ -54,6 +60,7 @@
   --purple: #59317e;
   --purple-shadow: #4a2464b0;
 
+  --white: #121212;
   --white-op: #ffffff8d;
   --white-very-op: #ffffff26;
   --white-trans: #a7a0a0b8;
@@ -252,40 +259,40 @@ progress {
 }
 
 .green progress::-webkit-progress-value {
-  background: green;
+  background: var(--green-screen);
   border-radius: 6px;
 }
 .green progress::-webkit-progress-bar {
   border-radius: 6px;
-  background: #bbbbbb;
+  background: var(--white-trans2);
 }
 
 .orange progress::-webkit-progress-value {
-  background: orange;
+  background: var(--orange);
   border-radius: 6px;
 }
 .orange progress::-webkit-progress-bar {
   border-radius: 6px;
-  background: #bbbbbb;
+  background: var(--white-trans2);
 }
 
 .red progress::-webkit-progress-value {
-  background: red;
+  background: var(--red2);
   border-radius: 6px;
 }
 .red progress::-webkit-progress-bar {
   border-radius: 6px;
-  background: #bbbbbb;
+  background: var(--dark-grey-trans2);
 }
 
 .green progress::-moz-progress-bar {
-  background: green;
+  background: var(--green-screen);
 }
 
 .orange progress::-moz-progress-bar {
-  background: orange;
+  background: var(--orange);
 }
 
 .red progress::-moz-progress-bar {
-  background: red;
+  background: var(--red2);
 }
