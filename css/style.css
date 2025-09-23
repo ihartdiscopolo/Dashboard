@@ -296,3 +296,8 @@ progress {
 .red progress::-moz-progress-bar {
   background: var(--red2);
 }
+
+.dateTime {
+  font-weight: bold;
+  font-size: 24px;
+}
