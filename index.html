@@ -5,8 +5,9 @@
     <title>Qteco status</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/test.css" />
+    <script src="dateTime.js"></script>
   </head>
-  <body>
+  <body onload="startTime()">
     <header class="Qteco">
       <div id="filter">
         <label for="status-filter">Show:</label>
@@ -19,9 +20,11 @@
           <option value="500-599">500–599</option>
         </select>
       </div>
+      <div class="dateTime" id="time"></div>
       <div>
         <img src="images/logo.svg"/>
       </div>
+      <div class="dateTime" id="date"></div>
       <div id="theme-container">
         <label for="theme-select">Theme:</label>
         <select id="theme-select">
