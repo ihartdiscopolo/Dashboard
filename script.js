@@ -166,6 +166,7 @@ filter.addEventListener("change", () => {
     renderCards(filtered);
   }
 });
+
 const themeSelect = document.getElementById("theme-select");
 
 if (localStorage.getItem("theme") === "dark") {

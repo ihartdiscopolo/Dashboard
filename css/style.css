@@ -22,6 +22,11 @@
   --purple: #e3c6f5;
   --purple-shadow: #996db5b0;
 
+  --white-op: #2c2c2cb4;
+  --white-very-op: #5c5c5c26;
+  --white-trans: #525252b9;
+  --white-shadow: #959595;
+
   --transparent: #00000000;
   --font-family: Arial, sans-serif;
 }
@@ -48,6 +53,11 @@
 
   --purple: #59317e;
   --purple-shadow: #4a2464b0;
+
+  --white-op: #ffffff8d;
+  --white-very-op: #ffffff26;
+  --white-trans: #a7a0a0b8;
+  --white-shadow: #545151;
 }
 
 html {
@@ -193,6 +203,7 @@ footer {
 .footDown {
   display: flex;
   justify-content: space-between;
+  gap: 24%;
 }
 
 .memoryBar, .diskBar {
@@ -204,27 +215,33 @@ footer {
 
 .memoryInfo {
   display: flex;
-  gap: 1%;
-  margin-right: 4%;
-  padding: 0.5rem 1rem;
+  gap: 2%;
+  padding-top: 1%;
+  margin-left: 0.6%;
 }
 
 .diskInfo{
   display: flex;
-  gap: 1%;
-  padding: 0.5rem 1rem;
+  gap: 2%;
+  padding-top: 1%;
 }
 
 .memoryInfo p {
-  border: 1px solid white;
   border-radius: 5px;
   padding: 1%;
+  background-color: var(--white-op);
+  background-image: radial-gradient(circle, var(--white-op) 0%, var(--white-trans) 50%, var(--white-shadow)100%);
+  color: var(--white);
+  box-shadow: 0 0.5vw 0.5vw var(--white-very-op);
 }
 
 .diskInfo p {
-  border: 1px solid white;
   border-radius: 5px;
   padding: 1%;
+  background-color: var(--white-op);
+  background-image: radial-gradient(circle, var(--white-op) 0%, var(--white-trans) 50%, var(--white-shadow)100%);
+  color: var(--white);
+  box-shadow: 0 0.5vw 0.5vw var(--white-very-op);
 }
 
 progress {
