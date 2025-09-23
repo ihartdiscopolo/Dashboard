@@ -60,9 +60,9 @@
   --white-shadow: #545151;
 }
 
-html {
+/* html {
   overflow-y: scroll;
-}
+} */
 
 body {
   font-family: var(--font-family);
@@ -165,6 +165,7 @@ a {
   border-radius: 6px;
   background-color: var(--transparent);
   color: var(--red2);
+  font-weight: bold;
 }
 
 #theme-container {
@@ -180,6 +181,7 @@ a {
   border-radius: 6px;
   background-color: var(--transparent);
   color: var(--red2);
+  font-weight: bold;
 }
 
 footer {
