@@ -1,7 +1,7 @@
   let allData = [];
   let serverData = [];
 
-fetch("status.json")
+fetch("scripts/status.json")
   .then(response => response.json())
   .then(data => {
     allData = data; 
@@ -9,11 +9,11 @@ fetch("status.json")
   })
   .catch(error => console.error("Error loading JSON:", error));
 
-  fetch("stats.json")
+  fetch("scripts/stats.json")
   .then(response => response.json())
   .then(data => {
     serverData = data.server.get.result.stat;
-      console.log(serverData);
+      // console.log(serverData);
       renderProgressBars(serverData);
   })
   .catch(error => console.error("Error loading JSON:", error));
@@ -21,7 +21,7 @@ fetch("status.json")
 function renderCards(data) {
   const container = document.querySelector("#card-container");
   container.innerHTML = ""; 
-  console.log(data);
+  // console.log(data);
   data.forEach(item => {
     const card = document.createElement("a");
     card.href= "https://" + item.url;
@@ -66,7 +66,7 @@ function renderProgressBars(serverData) {
 
   memAvailable = (memFree + memShared + memCached) / (1024 * 1024 * 1024);
 
-  console.log("Memory available: " + memAvailable.toFixed(2) + "Gb");
+  // console.log("Memory available: " + memAvailable.toFixed(2) + "Gb");
 
   memFreeMb = memFree / (1024 * 1024);
   memFreeGb = memFree / (1024 * 1024 * 1024);
@@ -77,7 +77,7 @@ function renderProgressBars(serverData) {
     memory = memFreeGb.toFixed(2) + "Gb"
   }
 
-  console.log("Memory free: " + memFree + ", " + memory);
+  // console.log("Memory free: " + memFree + ", " + memory);
 
   if (memPercent >= 80 && memPercent < 90) {
     memClass = "orange";
@@ -94,7 +94,7 @@ function renderProgressBars(serverData) {
 
   diskAvailable = (diskTotal - diskUsed) / (1024 * 1024 * 1024);
 
-  console.log("diskspace available: " + diskAvailable.toFixed(2) + "Gb");
+  // console.log("diskspace available: " + diskAvailable.toFixed(2) + "Gb");
 
   diskFreeMb = diskFree / (1024 * 1024);
   diskFreeGb = diskFree / (1024 * 1024 * 1024);
@@ -105,7 +105,7 @@ function renderProgressBars(serverData) {
     diskspace = diskFreeGb.toFixed(2) + "Gb"
   }
 
-  console.log("Diskspace free: " + diskFree + ", " + diskspace);
+  // console.log("Diskspace free: " + diskFree + ", " + diskspace);
 
   if (diskPercent >= 80 && diskPercent < 90) {
     diskClass = "orange";
