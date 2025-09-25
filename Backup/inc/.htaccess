@@ -1,0 +1,9 @@
+# Deny all access
+Order allow,deny
+Deny from all
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Block access to uploads and other folders
+RewriteRule ^(uploads|other)/ - [F,L]

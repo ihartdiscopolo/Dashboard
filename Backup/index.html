@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <title>Qteco status</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="scripts/dateTime.js"></script>
+    <script src="scripts/fetchApi.js"></script>
   </head>
-  <body>
+  <body onload="startTime()">
     <header class="Qteco">
       <div id="filter">
         <label for="status-filter">Show:</label>
@@ -18,9 +21,11 @@
           <option value="500-599">500–599</option>
         </select>
       </div>
+      <div class="dateTime" id="time"></div>
       <div>
-        <img src="https://qteco.nl/storage/app/media/logo.svg"/>
+        <img src="images/logo.svg"/>
       </div>
+      <div class="dateTime" id="date"></div>
       <div id="theme-container">
         <label for="theme-select">Theme:</label>
         <select id="theme-select">
@@ -30,7 +35,7 @@
       </div>
     </header>
     <div id="card-container"></div>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 <footer>
   <div class="footUp">
 

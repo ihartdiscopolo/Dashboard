@@ -1,0 +1,60 @@
+[
+  {
+    "id": "394332",
+    "name": "Advanced Security Networks",
+    "url": "https://n184.dashboard.meraki.com/o/JG-0db/manage/organization/overview",
+    "samlConsumerUrls": null,
+    "samlConsumerUrl": null,
+    "api": {
+      "enabled": true
+    },
+    "licensing": {
+      "model": "subscription"
+    },
+    "cloud": {
+      "region": {
+        "name": "Europe",
+        "host": {
+          "name": "Europe"
+        }
+      }
+    },
+    "management": {
+      "details": [
+        {
+          "name": "customer number",
+          "value": "23889064"
+        }
+      ]
+    }
+  },
+  {
+    "id": "666532744850833747",
+    "name": "Standard Security Networks",
+    "url": "https://n184.dashboard.meraki.com/o/2O92nd4c/manage/organization/overview",
+    "samlConsumerUrls": null,
+    "samlConsumerUrl": null,
+    "api": {
+      "enabled": true
+    },
+    "licensing": {
+      "model": "co-term"
+    },
+    "cloud": {
+      "region": {
+        "name": "Europe",
+        "host": {
+          "name": "Europe"
+        }
+      }
+    },
+    "management": {
+      "details": [
+        {
+          "name": "customer number",
+          "value": "45325799"
+        }
+      ]
+    }
+  }
+]
