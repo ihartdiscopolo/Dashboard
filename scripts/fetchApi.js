@@ -1,13 +1,23 @@
 async function fetchUnifi() {
-    const res = await fetch("inc/unifi.php");
-    const data = await res.json();
-    console.log("Unifi:", data);
+    try {
+        const res = await fetch("api/unifi.php");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        console.log("Unifi:", data);
+    } catch (err) {
+        console.error("Failed to fetch Unifi:", err);
+    }
 }
 
 async function fetchMeraki() {
-    const res = await fetch("inc/meraki.php");
-    const data = await res.json();
-    console.log("Meraki:", data);
+    try {
+        const res = await fetch("api/meraki.php");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        console.log("Meraki:", data);
+    } catch (err) {
+        console.error("Failed to fetch Meraki:", err);
+    }
 }
 
 // run immediately + every 60s

@@ -1,5 +1,6 @@
   let allData = [];
   let serverData = [];
+  const title = document.querySelector("title");
 
 fetch("scripts/status.json")
   .then(response => response.json())
@@ -38,6 +39,7 @@ function renderCards(data) {
     } 
     else if (status >= 400 && status <= 499) {
       card.classList.add("status-4xx");
+      title.innerHTML = `404 SITE DOWN`
     } 
     else if (status >= 500 && status <= 599) {
       card.classList.add("status-5xx");
