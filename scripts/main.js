@@ -6,7 +6,7 @@ function init() {
     fetchPlesk();
     setTimeout(() => {
         init();
-    }, 60000);
+    }, 300000);
 }
 
 function fetchPlesk() {
