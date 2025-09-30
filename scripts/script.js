@@ -57,7 +57,7 @@ function renderCards(data) {
         }
 
         card.innerHTML = `
-      <p class="url">${item.url}</p>
+    <p class="url">${item.url}</p>
     `;
 
         container.appendChild(card);
@@ -91,16 +91,16 @@ function renderProgressBars(serverData) {
         diskClass = "green";
     }
 
-    const barUp = document.querySelector(".footUp");
+    const barUp = document.querySelector("footer");
     barUp.innerHTML = "";
     barUp.innerHTML = `
   <div class="memoryBar ${memClass}">
-    <p>Memory used:</p>
+    <p>Memory:</p>
     <progress max="${memTotal}" value="${memUsed}"></progress>
     <p>${memPercent.toFixed(2)}%</p>
   </div>
   <div class="diskBar ${diskClass}">
-    <p>Diskspace used:</p>
+    <p>Diskspace:</p>
     <progress max="${diskTotal}" value="${diskUsed}"></progress>
     <p>${diskPercent.toFixed(2)}%</p>
   </div>
