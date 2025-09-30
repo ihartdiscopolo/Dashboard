@@ -11,9 +11,9 @@
         />
         <script src="scripts/dateTime.js"></script>
         <script src="scripts/script.js"></script>
-        <script src="scripts/fetchApi.js"></script>
+        <!-- <script src="scripts/fetchApi.js"></script> -->
     </head>
-    <body onload="startTime(); init()">
+    <body onload="startTime()">
         <header class="Qteco">
             <div id="filter">
                 <label for="status-filter">Show:</label>
@@ -52,31 +52,5 @@
         <footer>
             <div class="footUp"></div>
         </footer>
-        <!-- <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                let direction = 1; // 1 = scrolling down, -1 = scrolling up
-                let speed = 1; // pixels per frame
-                let delay = 20; // ms between frames
-
-                function autoScroll() {
-                    window.scrollBy(0, speed * direction);
-
-                    // If at bottom, switch direction to up
-                    if (
-                        window.innerHeight + window.scrollY >=
-                        document.body.offsetHeight
-                    ) {
-                        direction = -1;
-                    }
-
-                    // If at top, switch direction to down
-                    if (window.scrollY <= 0) {
-                        direction = 1;
-                    }
-                }
-
-                setInterval(autoScroll, delay);
-            });
-        </script> -->
     </body>
 </html>
