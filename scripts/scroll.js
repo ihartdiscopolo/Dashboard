@@ -2,29 +2,31 @@ function enableVerticalScroll(
     speed = 0.5,
     pauseDuration = 100
 ) {
-    const container = document.querySelector("#card-container");
+    const container = document.getElementById("card-container");
     if (!container) return;
-
+    
     let offset = container.scrollTop;
     let direction = 1; // 1 = down, -1 = up
     let paused = false;
     let pauseTimer = 0;
-
+    
     container.style.overflowY = "hidden";
-
+    
     container.addEventListener("mouseenter", () => {
         paused = true;
         container.style.overflowY = "auto"; // allow manual scroll
     });
-
+    
     container.addEventListener("mouseleave", () => {
         paused = false;
         container.style.overflowY = "hidden"; // resume auto-scroll
     });
-
+    
     const maxScroll = container.scrollHeight - container.clientHeight;
-    if (maxScroll <= 0) return; // nothing to scroll
-
+    console.log(container.scrollHeight, container.clientHeight);
+    // if (maxScroll <= 0) return; // nothing to scroll
+    console.log("hi");
+    
     function step() {
     if (!paused) {
         if (pauseTimer > 0) {
