@@ -1,0 +1,33 @@
+/* * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+} */
+p {
+    margin:0;
+}
+body{
+    margin:0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+}
+
+#loader {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loader span {
+    width: 100px;
+}
+
+.code{
+    font-size: 10px;
+}

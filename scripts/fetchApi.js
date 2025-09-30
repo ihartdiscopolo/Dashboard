@@ -36,6 +36,3 @@ fetchUnifi();
 fetchMeraki();
 setInterval(fetchUnifi, 60000);
 setInterval(fetchMeraki, 60000);
-
-// run immediately + every 5 minutes
-setInterval(fetchMeraki, 300000); 
