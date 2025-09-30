@@ -1,9 +1,17 @@
-  let allData = [];
-  let serverData = [];
-  const title = document.querySelector("title");
+let allData = [];
+let serverData = [];
+const title = document.querySelector("title");
+
+function init() {
+  renderCards()
+  renderProgressBars()
+  setTimeout(() => {
+    init()
+  }, 600000);
+}
 
 //fetch("api/pleskdata.php?file=plesk_status")
-fetch("api/cache/plesk_status.json")
+fetch("https://pleskdata.qnimbus.nl/plesk_status.json")
   .then(response => response.json())
   .then(data => {
     allData = data; 
@@ -12,7 +20,7 @@ fetch("api/cache/plesk_status.json")
   .catch(error => console.error("Error loading JSON:", error));
 
   //fetch("api/pleskdata.php?file=plesk_stats")
-fetch("api/cache/plesk_stats.json")
+fetch("https://pleskdata.qnimbus.nl/plesk_stats.json")
   .then(response => response.json())
   .then(data => {
     serverData = data.server.get.result.stat;
@@ -64,6 +72,7 @@ function renderCards(data) {
 }
 
 function renderProgressBars(serverData) {
+  fetchPlesk()
   const memTotal = parseInt(serverData.mem.total, 10);
   const memUsed  = parseInt(serverData.mem.used, 10);
   const memPercent = (memUsed / memTotal) * 100;
@@ -100,24 +109,6 @@ function renderProgressBars(serverData) {
     <p>Diskspace used:</p>
     <progress max="${diskTotal}" value="${diskUsed}"></progress>
     <p>${diskPercent.toFixed(2)}%</p>
-  </div>
-  `
-
-  const barDown = document.querySelector(".footDown");
-  barDown.innerHTML = ""
-  barDown.innerHTML = `
-  <div class="memoryInfo">
-    <p>Memory</p>
-    <p>Total: ${(memTotal / (1024 * 1024 * 1024)).toFixed(2)}Gb</p>
-    <p>Cached: ${(memCached / (1024 * 1024 * 1024)).toFixed(2)}Gb</p>
-    <p>Free: ${memory}</p>
-    <p>Available: ${memAvailable.toFixed(2)}Gb</p>
-  </div>
-  <div class="diskInfo">
-    <p>Diskspace</p>
-    <p>Total: ${(diskTotal / (1024 * 1024 * 1024)).toFixed(2)}Gb</p>
-    <p>Free: ${diskspace}</p>
-    <p>Available: ${diskAvailable.toFixed(2)}Gb</p>
   </div>
   `
 }
