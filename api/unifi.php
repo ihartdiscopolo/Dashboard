@@ -3,7 +3,6 @@ header("Content-Type: application/json");
 
 $ch = curl_init("https://api.ui.com/v1/hosts");
 
-// replace with your real API key
 $headers = [
     "X-API-KEY: C5zisWdwA8MU6SaNnGb4bQdsYmKCIatC",
     "Accept: application/json"

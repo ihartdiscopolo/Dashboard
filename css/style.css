@@ -5,6 +5,8 @@
   --dark-grey-trans: #33333328;
   --dark-grey-trans2: #333333a9;
   --light-grey: #ebebeb;
+  --status-grey: #D3D3D3;
+  --status-grey-shadow: #D3D3D330;
 
   --blue: #b3c6ed;
   --blue-shadow: #647597b8;
@@ -44,6 +46,8 @@
   --dark-grey-trans2: #e6e6e6a9;
   --light-grey: #1c1c1c;
   --white: #121212;
+  --status-grey: #424242;
+  --status-grey-shadow: #42424230;
 
   --blue: #3a4f72;
   --blue-shadow: #33435fb8;
@@ -132,6 +136,11 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.status-0xx {
+  background-color: var(--status-grey);
+  box-shadow: 0 0.5vw 0.5vw var(--status-grey-trans);
 }
 
 .status-1xx {

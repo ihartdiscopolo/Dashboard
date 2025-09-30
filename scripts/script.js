@@ -2,7 +2,8 @@
   let serverData = [];
   const title = document.querySelector("title");
 
-fetch("scripts/status.json")
+//fetch("api/pleskdata.php?file=plesk_status")
+fetch("api/cache/plesk_status.json")
   .then(response => response.json())
   .then(data => {
     allData = data; 
@@ -10,7 +11,8 @@ fetch("scripts/status.json")
   })
   .catch(error => console.error("Error loading JSON:", error));
 
-  fetch("scripts/stats.json")
+  //fetch("api/pleskdata.php?file=plesk_stats")
+ fetch("api/cache/plesk_stats.json")
   .then(response => response.json())
   .then(data => {
     serverData = data.server.get.result.stat;
@@ -30,8 +32,11 @@ function renderCards(data) {
     card.classList.add("card");
 
     const status = Number(item.status);
-
-    if (status >= 200 && status <= 299) {
+	
+	if (status < 100) {
+	  card.classList.add("status-0xx");
+	}
+    else if (status >= 200 && status <= 299) {
       card.classList.add("status-2xx");
     } 
     else if (status >= 300 && status <= 399) {
@@ -39,7 +44,7 @@ function renderCards(data) {
     } 
     else if (status >= 400 && status <= 499) {
       card.classList.add("status-4xx");
-      title.innerHTML = `404 SITE DOWN`
+      title.innerHTML = `404 ${item.url} DOWN`
     } 
     else if (status >= 500 && status <= 599) {
       card.classList.add("status-5xx");
