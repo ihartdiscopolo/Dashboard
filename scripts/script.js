@@ -12,7 +12,7 @@ fetch("api/cache/plesk_status.json")
   .catch(error => console.error("Error loading JSON:", error));
 
   //fetch("api/pleskdata.php?file=plesk_stats")
- fetch("api/cache/plesk_stats.json")
+fetch("api/cache/plesk_stats.json")
   .then(response => response.json())
   .then(data => {
     serverData = data.server.get.result.stat;
@@ -67,24 +67,6 @@ function renderProgressBars(serverData) {
   const memTotal = parseInt(serverData.mem.total, 10);
   const memUsed  = parseInt(serverData.mem.used, 10);
   const memPercent = (memUsed / memTotal) * 100;
-  const memFree = parseInt(serverData.mem.free, 10);
-  const memShared = parseInt(serverData.mem.shared, 10);
-  const memCached = parseInt(serverData.mem.cached, 10);
-
-  memAvailable = (memFree + memShared + memCached) / (1024 * 1024 * 1024);
-
-  // console.log("Memory available: " + memAvailable.toFixed(2) + "Gb");
-
-  memFreeMb = memFree / (1024 * 1024);
-  memFreeGb = memFree / (1024 * 1024 * 1024);
-
-  if (memFreeGb < 1) {
-    memory = memFreeMb.toFixed(2) + "Mb"
-  } else {
-    memory = memFreeGb.toFixed(2) + "Gb"
-  }
-
-  // console.log("Memory free: " + memFree + ", " + memory);
 
   if (memPercent >= 80 && memPercent < 90) {
     memClass = "orange";
@@ -97,22 +79,6 @@ function renderProgressBars(serverData) {
   const diskTotal = parseInt(serverData.diskspace.device.total, 10);
   const diskUsed  = parseInt(serverData.diskspace.device.used, 10);
   const diskPercent = (diskUsed / diskTotal) * 100;
-  const diskFree = parseInt(serverData.diskspace.device.free);
-
-  diskAvailable = (diskTotal - diskUsed) / (1024 * 1024 * 1024);
-
-  // console.log("diskspace available: " + diskAvailable.toFixed(2) + "Gb");
-
-  diskFreeMb = diskFree / (1024 * 1024);
-  diskFreeGb = diskFree / (1024 * 1024 * 1024);
-
-  if (diskFreeGb < 1) {
-    diskspace = diskFreeMb.toFixed(2) + "Mb"
-  } else {
-    diskspace = diskFreeGb.toFixed(2) + "Gb"
-  }
-
-  // console.log("Diskspace free: " + diskFree + ", " + diskspace);
 
   if (diskPercent >= 80 && diskPercent < 90) {
     diskClass = "orange";
@@ -189,5 +155,6 @@ themeSelect.addEventListener("change", (e) => {
     document.body.classList.remove("dark-mode");
     localStorage.setItem("theme", "light");
   }
+  
 });
 });

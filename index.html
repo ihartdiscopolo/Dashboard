@@ -14,7 +14,7 @@
         <script src="scripts/fetchApi.js"></script>
     </head>
     <body onload="startTime()">
-        <header class="Qteco">
+            <header class="Qteco">
             <div id="filter">
                 <label for="status-filter">Show:</label>
                 <select id="status-filter">
@@ -49,10 +49,34 @@
             <h3>Meraki</h3>
             <pre id="meraki-data">Loading...</pre>
         </div> -->
-
         <footer>
             <div class="footUp"></div>
-            <div class="footDown"></div>
         </footer>
+        <!-- <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                let direction = 1; // 1 = scrolling down, -1 = scrolling up
+                let speed = 1; // pixels per frame
+                let delay = 20; // ms between frames
+
+                function autoScroll() {
+                    window.scrollBy(0, speed * direction);
+
+                    // If at bottom, switch direction to up
+                    if (
+                        window.innerHeight + window.scrollY >=
+                        document.body.offsetHeight
+                    ) {
+                        direction = -1;
+                    }
+
+                    // If at top, switch direction to down
+                    if (window.scrollY <= 0) {
+                        direction = 1;
+                    }
+                }
+
+                setInterval(autoScroll, delay);
+            });
+        </script> -->
     </body>
 </html>
