@@ -22,10 +22,8 @@ function enableVerticalScroll(
         container.style.overflowY = "hidden"; // resume auto-scroll
     });
     
-    const maxScroll = container.scrollHeight - container.clientHeight;
-    console.log(container.scrollHeight, container.clientHeight);
+    // const maxScroll = container.scrollHeight - container.clientHeight;
     // if (maxScroll <= 0) return; // nothing to scroll
-    console.log("hi");
     
     function step() {
     if (!paused) {
