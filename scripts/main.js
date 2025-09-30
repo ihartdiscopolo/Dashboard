@@ -3,31 +3,30 @@ let serverData = [];
 const title = document.querySelector("title");
 
 function init() {
-    renderCards(allData);
-    renderProgressBars(serverData);
+    fetchPlesk();
     setTimeout(() => {
         init();
     }, 60000);
 }
 
-//fetch("api/pleskdata.php?file=plesk_status")
-fetch("https://pleskdata.qnimbus.nl/plesk_status.json")
-    .then((response) => response.json())
-    .then((data) => {
-        allData = data;
-        renderCards(allData);
-    })
-    .catch((error) => console.error("Error loading JSON:", error));
+function fetchPlesk() {
+    fetch("https://pleskdata.qnimbus.nl/plesk_status.json")
+        .then((response) => response.json())
+        .then((data) => {
+            allData = data;
+            renderCards(allData);
+        })
+        .catch((error) => console.error("Error loading JSON:", error));
 
-//fetch("api/pleskdata.php?file=plesk_stats")
-fetch("https://pleskdata.qnimbus.nl/plesk_stats.json")
-    .then((response) => response.json())
-    .then((data) => {
-        serverData = data.server.get.result.stat;
-        // console.log(serverData);
-        renderProgressBars(serverData);
-    })
-    .catch((error) => console.error("Error loading JSON:", error));
+    fetch("https://pleskdata.qnimbus.nl/plesk_stats.json")
+        .then((response) => response.json())
+        .then((data) => {
+            serverData = data.server.get.result.stat;
+            // console.log(serverData);
+            renderProgressBars(serverData);
+        })
+        .catch((error) => console.error("Error loading JSON:", error));
+}
 
 function renderCards(data) {
     const container = document.querySelector("#card-container");
