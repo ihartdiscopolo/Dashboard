@@ -9,6 +9,10 @@ function init() {
     }, 150000);
 }
 
+function reloadTime(){
+    
+}
+
 function fetchPlesk() {
     fetch("https://pleskdata.qnimbus.nl/plesk_status.json")
         .then((response) => response.json())

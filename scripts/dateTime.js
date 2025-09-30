@@ -18,6 +18,8 @@ function startTime() {
     setTimeout(startTime, 1000);
 }
 
+document.querySelector(".lastReload").innerHTML = h + ":" + m;
+
 function checkTime(i) {
     if (i < 10) {
         i = "0" + i;
