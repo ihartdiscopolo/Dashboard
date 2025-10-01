@@ -1,19 +1,16 @@
 :root {
-  --black: #000000;
-  --black-shadow: #0000001a;
-
   --dark-grey: #333333;
   --dark-grey-trans: #33333328;
-  --dark-grey-trans2: #333333a9;
 
   --light-grey: #ebebeb;
+
   --status-grey: #D3D3D3;
   --status-grey-trans: #D3D3D330;
 
   --blue: #b3c6ed;
   --blue-shadow: #647597b8;
 
-  --green-screen:  #008000;
+  --green-screen:  #009e00;
   --green: #b5d1bb;
   --green-shadow: #6e9f7aad;
 
@@ -30,22 +27,16 @@
   --purple-shadow: #996db5b0;
 
   --white: #ffffff;
-  --white-op: #2c2c2cb4;
-  --white-very-op: #5c5c5c26;
-  --white-trans: #525252b9;
-  --white-trans2: #bbbbbb;
-  --white-shadow: #959595;
+  --white-op: #858585b4;
 
   --transparent: #00000000;
   --font-family: Arial, sans-serif;
 }
 
 .dark-mode {
-  --black: #000000;
-  --black-shadow: #ffffff1a;
   --dark-grey: #e6e6e6;
   --dark-grey-trans: #161515b4;
-  --dark-grey-trans2: #e6e6e6a9;
+
   --light-grey: #1c1c1c;
   --white: #121212;
   --status-grey: #424242;
@@ -67,10 +58,7 @@
   --purple-shadow: #4a2464b0;
 
   --white: #121212;
-  --white-op: #ffffff8d;
-  --white-very-op: #ffffff26;
-  --white-trans: #a7a0a0b8;
-  --white-shadow: #545151;
+  --white-op: #8b8b8bb4;
 }
 
 html {
@@ -188,7 +176,7 @@ a {
   font-size: 1vw;
   border-radius: 6px;
   background-color: var(--transparent);
-  color: var(--red2);
+  color: var(--white-op);
   font-weight: bold;
 }
 
@@ -204,8 +192,16 @@ a {
   font-size: 1vw;
   border-radius: 6px;
   background-color: var(--transparent);
-  color: var(--red2);
+  color: var(--white-op);
   font-weight: bold;
+}
+
+#status-filter option {
+  background-color: var(--white);               
+}
+
+#theme-select option {
+  background-color: var(--white);
 }
 
 footer {
@@ -238,7 +234,7 @@ progress {
 }
 .green progress::-webkit-progress-bar {
   border-radius: 6px;
-  background: var(--white-trans2);
+  background: var(--white-op);
 }
 
 .orange progress::-webkit-progress-value {
@@ -247,7 +243,7 @@ progress {
 }
 .orange progress::-webkit-progress-bar {
   border-radius: 6px;
-  background: var(--white-trans2);
+  background: var(--white-op);
 }
 
 .red progress::-webkit-progress-value {
@@ -256,7 +252,7 @@ progress {
 }
 .red progress::-webkit-progress-bar {
   border-radius: 6px;
-  background: var(--dark-grey-trans2);
+  background: var(--white-op);
 }
 
 .green progress::-moz-progress-bar {
@@ -275,3 +271,8 @@ progress {
   font-weight: bold;
   font-size: 24px;
 }
+
+.lastReload {
+  font-size: 24px;
+}
+
