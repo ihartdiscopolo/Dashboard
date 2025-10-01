@@ -219,7 +219,6 @@ footer {
   box-shadow: 0 -0.5vw 0.5vw var(--dark-grey-trans);
   display: flex;
   justify-content: space-evenly;
-  gap: 24%;
 }
 
 .memoryBar, .diskBar {

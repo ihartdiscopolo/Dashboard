@@ -7,7 +7,7 @@ function init() {
     reloadTime();
     setTimeout(() => {
         init();
-    }, 120000);
+    }, 300000);
 }
 
 function reloadTime(){
