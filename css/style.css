@@ -62,8 +62,8 @@
   --purple-shadow: #4a2464b0;
 
   --white: #121212;
-  --white2: #131313;
-  --white3: #3f3f3f28;
+  --white2: #252525;
+  --white3: #ffffff28;
   
   --white-op: #8b8b8bb4;
 }
@@ -83,7 +83,7 @@ body {
 }
 
 .Qteco {
-  background-image: radial-gradient(circle, var(--white3) 10%, var(--white2) 20%, var(--white)100%);
+  background-image: radial-gradient(circle, var(--white3) 15%, var(--white2) 20%, var(--white)50%);
   display: flex;
   position: sticky;
   height: 7vh;
