@@ -182,7 +182,7 @@ a {
   font-size: 1vw;
   border-radius: 6px;
   background-color: var(--transparent);
-  color: var(--white-op);
+  color: var(--black);
   font-weight: bold;
 }
 
@@ -198,7 +198,7 @@ a {
   font-size: 1vw;
   border-radius: 6px;
   background-color: var(--transparent);
-  color: var(--white-op);
+  color: var(--black);
   font-weight: bold;
 }
 
