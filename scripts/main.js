@@ -4,13 +4,18 @@ const title = document.querySelector("title");
 
 function init() {
     fetchPlesk();
+    reloadTime();
     setTimeout(() => {
         init();
-    }, 150000);
+    }, 120000);
 }
 
 function reloadTime(){
-    
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let time = h + ":" + m;
+    return time
 }
 
 function fetchPlesk() {
@@ -46,9 +51,9 @@ function renderCards(data) {
 
         if (status < 100) {
             card.classList.add("status-0xx");
-        } else if (status >= 200 && status <= 299) {
+        } else if (status >= 200 && status <= 301) {
             card.classList.add("status-2xx");
-        } else if (status >= 300 && status <= 399) {
+        } else if (status >= 302 && status <= 399) {
             card.classList.add("status-3xx");
         } else if (status >= 400 && status <= 499) {
             card.classList.add("status-4xx");
@@ -70,6 +75,7 @@ function renderCards(data) {
 }
 
 function renderProgressBars(serverData) {
+    time = reloadTime();
     const memTotal = parseInt(serverData.mem.total, 10);
     const memUsed = parseInt(serverData.mem.used, 10);
     const memPercent = (memUsed / memTotal) * 100;
@@ -102,6 +108,7 @@ function renderProgressBars(serverData) {
     <progress max="${memTotal}" value="${memUsed}"></progress>
     <p>${memPercent.toFixed(2)}%</p>
   </div>
+  <div class="lastReload">${time}</div>
   <div class="diskBar ${diskClass}">
     <p>Diskspace:</p>
     <progress max="${diskTotal}" value="${diskUsed}"></progress>
