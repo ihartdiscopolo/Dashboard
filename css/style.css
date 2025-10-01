@@ -13,6 +13,8 @@
   --green-screen:  #009e00;
   --green: #b5d1bb;
   --green-shadow: #6e9f7aad;
+  --dark-green: #82b08c;
+  --dark-green-shadow: #6e9f7aad;
 
   --yellow: #fff3cd;
   --yellow-shadow: #bca352cc;
@@ -47,6 +49,8 @@
 
   --green: #2e4737;
   --green-shadow: #2a432fad;
+  --dark-green: #3b5e43;
+  --dark-green-shadow: #3d5c45;
 
   --yellow: #7a6d2b;
   --yellow-shadow: #5d521bcc;
@@ -152,8 +156,8 @@ a {
 }
 
 .status-3xx {
-  background-color: var(--blue);
-  box-shadow: 0 0.2vw 0.2vw var(--blue-shadow);
+  background-color: var(--dark-green);
+  box-shadow: 0 0.2vw 0.2vw var(--dark-green-shadow);
 }
 
 .status-4xx {

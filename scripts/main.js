@@ -59,9 +59,9 @@ function renderCards(data) {
 
         if (status < 100) {
             card.classList.add("status-0xx");
-        } else if (status >= 200 && status <= 301) {
+        } else if (status >= 200 && status <= 299) {
             card.classList.add("status-2xx");
-        } else if (status >= 302 && status <= 399) {
+        } else if (status >= 300 && status <= 399) {
             card.classList.add("status-3xx");
         } else if (status >= 400 && status <= 499) {
             card.classList.add("status-4xx");
