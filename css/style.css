@@ -159,8 +159,8 @@ a {
 }
 
 .status-3xx {
-  background-color: var(--dark-green);
-  box-shadow: 0 0.2vw 0.2vw var(--dark-green-shadow);
+  background-color: var(--blue);
+  box-shadow: 0 0.2vw 0.2vw var(--blue-shadow);
 }
 
 .status-4xx {
